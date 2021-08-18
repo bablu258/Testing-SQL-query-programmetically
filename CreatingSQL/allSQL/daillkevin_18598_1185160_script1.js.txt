@@ -1,0 +1,50 @@
+db.patients.drop();
+db.patients.insertMany( [
+{
+	"name": "Debra Smith",
+	"ssn": "123-45-6789",
+	"age": "10",
+	"address": {
+		"street": "Attn: Supt. Window Services; PO Box 7005",
+		"city": "WI",
+		"state": "Madison",
+		"zip": "53707"
+		}
+},
+{
+	"name": "Will Jones",
+	"ssn": "987-65-4321",
+	"age": "20",
+	"address": {
+		"street": "PO Box 96621",
+		"city": "DC",
+		"state": "Washington",
+		"zip": "20120"
+		}
+},
+{
+	"name": "John Doe",
+	"ssn": "222-45-6789",
+	"age": "30",
+	"address": {
+		"street": "Library Of Congress",
+		"city": "DC",
+		"state": "Washington",
+		"zip": "20559"
+		},
+	"prescriptions": [{
+			"id": "RX743009",
+			"tradename": "Hydrocholorothiazide"
+			},
+			{
+			"id": "RX656003",
+			"tradename": "LEVAQUIN",
+			"formula": "levofloxacin"
+			}]
+}
+]);
+db.patients.find()
+db.patients.find({age: "20"})
+db.patients.find({age: {$lt: "25"}})
+db.patients.drop();
+

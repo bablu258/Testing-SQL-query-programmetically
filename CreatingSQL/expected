@@ -1,0 +1,26 @@
+
+
+
+-- Student sql:
+select productid, productname, vendorname, productprice
+from product, vendor where product.vendorid = vendor.vendorid;
+
+
+
+
+-- Student sql:
+select productid, productname, vendorname, productprice, categoryname
+from product, vendor, category
+where product.vendorid = vendor.vendorid and product.categoryid = category.categoryid
+order by productid;
+
+
+
+
+
+
+-- Student sql:
+select distinct p.productid, productname, productprice
+from product p, vendor v, region r, store s, salestransaction t
+where p.vendorid = v.vendorid and v.vendorname = "Pacifica Gear"
+and t.storeid = s.storeid and s.regionid = r.regionid and r.regionname = "Tristate";
